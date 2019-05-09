@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.ke.idcard">
+
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application>
+
+        <activity
+                android:name=".CardsCameraActivity"
+                android:screenOrientation="landscape"
+                android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+                android:exported="false"/>
+
+        <service
+                android:name="kernal.idcard.android.AuthService"
+                android:enabled="true"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="kernal.idcard.authService"/>
+            </intent-filter>
+        </service>
+
+        <service
+                android:name="kernal.idcard.android.RecogService"
+                android:enabled="true"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="kernal.idcard.recogService"/>
+            </intent-filter>
+        </service>
+        <service
+                android:name="kernal.idcard.android.TimeService"
+                android:enabled="true"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="kernal.idcard.TimeService"/>
+            </intent-filter>
+        </service>
+
+        <receiver android:name="kernal.idcard.android.DataChangeReceiver"/>
+    </application>
+
+</manifest>
