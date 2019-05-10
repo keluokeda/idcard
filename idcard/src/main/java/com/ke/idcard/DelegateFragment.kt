@@ -34,10 +34,6 @@ class DelegateFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val devCode = getString(R.string.dev_code)
-
-        Devcode.devcode = devCode
-
 
         retainInstance = true
     }
